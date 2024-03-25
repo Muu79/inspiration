@@ -1,0 +1,4 @@
+#weather-widget-wrapper{
+    display: flex;
+    grid-column: 2;
+}
