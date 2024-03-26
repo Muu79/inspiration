@@ -1,4 +1,8 @@
 header{
     display: grid;
     grid-template-columns: 4fr 1fr;
+    box-sizing: border-box;
+    color: rgba(218, 218, 218, 0.866);
+    background-color: rgba(72, 72, 72, 0.225);
+    z-index: -1;
 }

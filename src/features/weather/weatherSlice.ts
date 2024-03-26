@@ -2,23 +2,28 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { requestWeather } from './weatherAPI';
 
-interface WeatherState {
+export interface WeatherState {
     weather: {
-        current: { temperature_2m: number, weather_code: number },
-        daily: { temperature_2m_min: number, temperature_2m_max: number }
+        current: { currentTemp : number, weatherCode: number },
+        daily: { min: number, max: number }
     };
     loading: 'idle' | 'pending' | 'failed';
+}
+
+export type Weather = {
+    current: { currentTemp: number, weatherCode: number },
+    daily: { min: number, max: number }
 }
 
 const initialState: WeatherState = {
     weather: {
         current: {
-            temperature_2m: 0,
-            weather_code: 0,
+            currentTemp: 0,
+            weatherCode: NaN, // NaN indicates an un-initialized state
         },
         daily: {
-            temperature_2m_min: 0,
-            temperature_2m_max: 0,
+            min: 0,
+            max: 0,
         }
     },
     loading: 'idle',
@@ -55,6 +60,7 @@ export const fetchWeather = createAsyncThunk(
     },
 )
 
-export const selectWeather = (state: { weather: { weather: any; }; }) => state.weather.weather;
+export const selectWeather = (state: { weather: { weather: Weather; }; }) => state.weather.weather;
+export const selectLoading = (state: { weather: { loading: 'idle' | 'pending' | 'failed'; }; }) => state.weather.loading;
 export const { setWeather } = weatherSlice.actions;
 export default weatherSlice.reducer;
