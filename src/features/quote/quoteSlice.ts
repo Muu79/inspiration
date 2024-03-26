@@ -2,12 +2,16 @@ import { CreateSliceOptions, createAsyncThunk, createSlice } from '@reduxjs/tool
 import { getQuote } from './quoteApi';
 
 export interface QuoteState {
-    quote: string;
+    quote: {
+        q: string,
+        a: string,
+        h: string,
+    }[];
     loading: 'idle' | 'loading' | 'failed';
 }
 
 const initialState: QuoteState = {
-    quote: '',
+    quote: [],
     loading: 'idle',
 }
 

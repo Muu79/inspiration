@@ -2,6 +2,27 @@
     display: flex;
     grid-column: 2;
     justify-content: center;
-    font-style: italic;
+    font-family: 'Noto Sans Display', sans-serif;
+}
+
+#temp-wrapper{
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+}
+
+#current-temp{
+    font-size: 1.1em;
+}
+
+.icon-wrapper{
+    position: relative;
+    left: -0.5em;
+}
+
+.icon-wrapper > svg{
+    width: 5em;
+    height: 5em;
 }
 
