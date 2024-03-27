@@ -1,0 +1,9 @@
+header{
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    box-sizing: border-box;
+    color: rgb(218, 218, 218);
+    background-color: rgba(27, 27, 27, 0.647);
+    z-index: -1;
+    height: fit-content;
+}

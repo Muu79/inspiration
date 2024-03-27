@@ -1,0 +1,32 @@
+#weather-widget-wrapper{
+    display: flex;
+    grid-column: 2/2;
+    justify-content: center;
+    font-family: 'Noto Sans Display', sans-serif;
+    font-size: 1em;
+    overflow: auto;
+}
+
+#temp-wrapper{
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+}
+
+#current-temp{
+    font-size: 1.1em;
+}
+
+.icon-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.icon-wrapper > svg{
+    width: 80%;
+    height: 80%;
+}
+
