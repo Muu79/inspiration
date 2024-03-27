@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { selectQuote, fetchQuote, selectLoading } from "../../features/quote/quoteSlice";
-
+import './QuoteWidget.css';
 export default function QuoteWidget() {
     const quote = useAppSelector(selectQuote);
     const loading = useAppSelector(selectLoading);
@@ -17,17 +17,23 @@ export default function QuoteWidget() {
     useEffect(() => {
         if (quote.length > 0) {
             const interval = setInterval(() => {
-                setQuoteIndex((Math.random() * (quote.length + 1)));
-            })
+                const rand = Math.random();
+                setQuoteIndex(Math.ceil(rand * quote.length));
+            }, 300000)
             return () => clearInterval(interval);
         }
     }, [])
 
-    const quoteWrapper = (quote:string) => React.createElement('div', null, quote);
+
+    const quoteWrapper = ({ q, a }: { q: string, a: string }) => {
+        console.log(q, a);
+        return (<>
+            <blockquote id="quote-text">&ldquo;{q}&rdquo; &mdash;<footer id="author-text">{a}</footer></blockquote>
+        </>)
+    };
     return (
-        <div>
-            <h1>Quote</h1>
-            {quote.length > 0 && quoteWrapper(quote[quoteIndex].h)}
+        <div id="quote-widget-wrapper">
+            {quote.length > 0 && quoteWrapper(quote[quoteIndex])}
         </div>
     )
 }

@@ -35,7 +35,6 @@ const options: CreateSliceOptions = {
                 state.loading = 'failed';
             })
             .addCase(fetchQuote.fulfilled, (state, action) => {
-                console.log(action.payload);
                 state.quote = action.payload;
                 state.loading = 'idle';
             });

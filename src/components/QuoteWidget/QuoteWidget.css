@@ -1,0 +1,21 @@
+#quote-widget-wrapper{
+    padding: 1em;
+    grid-column: 1;
+    justify-content: center;
+    font-size: 1em;
+    font-family: 'caveat', sans-serif;
+    width: max-content;
+}
+
+#quote-text{
+    font-size: 1.3em;
+    font-weight: 600;
+    font-family: 'caveat', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#author-text{
+    align-self: flex-end;
+}
