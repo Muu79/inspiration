@@ -1,8 +1,10 @@
 #weather-widget-wrapper{
     display: flex;
-    grid-column: 2;
+    grid-column: 2/2;
     justify-content: center;
     font-family: 'Noto Sans Display', sans-serif;
+    font-size: 1em;
+    overflow: auto;
 }
 
 #temp-wrapper{
@@ -17,12 +19,14 @@
 }
 
 .icon-wrapper{
-    position: relative;
-    left: -0.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }
 
 .icon-wrapper > svg{
-    width: 5em;
-    height: 5em;
+    width: 80%;
+    height: 80%;
 }
 
