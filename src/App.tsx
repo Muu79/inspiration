@@ -1,6 +1,6 @@
 import './App.css';
 import Header from './components/Header/Header';
-import ToDo from './components/ToDo/ToDo';
+import TaskContainer from './components/TaskContainer/TaskContainer';
 
 function App() {
   return (
@@ -9,8 +9,8 @@ function App() {
       <div id='content'>
         <Header />
         <main>
-          <div id='todo-wrapper'>
-            <ToDo />
+          <div id='task-wrapper'>
+            <TaskContainer />
           </div>
         </main>
       </div>
