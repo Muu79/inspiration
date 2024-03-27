@@ -22,6 +22,9 @@ const options: CreateSliceOptions = {
         setQuote: (state, action) => {
             state.quote = action.payload;
         },
+        addQuote: (state, action) => {
+            state.quote.push(action.payload);
+        }
     },
     extraReducers: (builder) => {
         builder
