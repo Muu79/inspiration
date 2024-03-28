@@ -31,8 +31,10 @@ export default function ToDo() {
             <div>
                 <form id='task-form' onSubmit={handleSubmit}>
                     <label htmlFor="task-input">Add Task:</label>
-                    <input id='task-input' value={taskInput} onChange={(e) => setInput(e.target.value)}></input>
-                    <button type='submit'><FaPlus /></button>
+                    <div className='input-with-button'>
+                        <input id='task-input' value={taskInput} onChange={(e) => setInput(e.target.value)}></input><button type='submit'><FaPlus /></button>
+                    </div>
+
                 </form>
             </div>
         </div>
