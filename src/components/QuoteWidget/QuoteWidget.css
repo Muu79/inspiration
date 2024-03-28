@@ -4,7 +4,10 @@
     justify-content: center;
     font-size: 1em;
     font-family: 'Merienda', sans-serif;
-    width: max-content;
+    width: fit-content;
+    max-width: 80vw;
+    overflow: auto;
+    box-sizing: content-box;
 }
 
 #quote-text{
@@ -13,6 +16,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin-top: 1em;
 }
 
 #author-text{
