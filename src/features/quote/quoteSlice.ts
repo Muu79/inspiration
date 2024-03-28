@@ -1,4 +1,4 @@
-import { CreateSliceOptions, createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { getQuote } from './quoteApi';
 
 export interface QuoteState {
