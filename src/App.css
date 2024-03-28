@@ -25,4 +25,12 @@ main{
 
 }
 
+@media screen and (max-width: 768px) {
+  main{
+    grid-template-columns: 1fr 10fr 1fr;
+  }
+  html{
+    font-size: 0.8em;}
+  
+}
 

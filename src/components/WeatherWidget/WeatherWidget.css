@@ -1,32 +1,49 @@
-#weather-widget-wrapper{
-    display: flex;
-    grid-column: 2/2;
-    justify-content: center;
-    font-family: 'Noto Sans Display', sans-serif;
-    font-size: 1em;
-    overflow: auto;
+#weather-widget-wrapper {
+  display: flex;
+  grid-column: 2/2;
+  justify-content: center;
+  font-family: "Noto Sans Display", sans-serif;
+  font-size: 1em;
+  overflow: auto;
 }
 
-#temp-wrapper{
+#temp-wrapper {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
+}
+
+#current-temp {
+  font-size: 1.1em;
+}
+@media screen and (max-width: 768px) {
+  #weather-widget-wrapper {
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 0;
+  }
+
+  .icon-wrapper{
+    width: 100%;
+  }
+  #temp-wrapper {
+    font-size: 0.9em;
+    padding-top: 1.1em;
+    margin-bottom: -1.1em;
+    min-height: 3em;
+  }
 }
 
-#current-temp{
-    font-size: 1.1em;
+.icon-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.icon-wrapper{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
+.icon-wrapper > svg {
+  width: 80%;
+  height: 80%;
 }
-
-.icon-wrapper > svg{
-    width: 80%;
-    height: 80%;
-}
-

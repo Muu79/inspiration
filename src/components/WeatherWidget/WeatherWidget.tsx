@@ -36,9 +36,10 @@ function WeatherWidget() {
     }, []);
 
     useEffect(() => {
-        if (coords.latitude !== 0 && coords.longitude !== 0) {
-            dispatch(fetchWeather({ lat: coords.latitude, long: coords.longitude }));
-
+        if (coords.latitude !== 0 && coords.longitude !== 0 && loading === 'idle') {
+            if(isNaN(weather.current.weatherCode)){
+                dispatch(fetchWeather({ lat: coords.latitude, long: coords.longitude }))
+            }
             const interval = setInterval(() => {
                 if (loading === 'idle') {
                     dispatch(fetchWeather({ lat: coords.latitude, long: coords.longitude }))

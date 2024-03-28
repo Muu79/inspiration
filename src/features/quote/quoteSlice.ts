@@ -15,9 +15,9 @@ const initialState: QuoteState = {
     loading: 'idle',
 }
 
-const options: CreateSliceOptions = {
+export const quoteSlice = createSlice({
     name: 'quote',
-    initialState,
+    initialState: initialState as QuoteState,
     reducers: {
         setQuote: (state, action) => {
             state.quote = action.payload;
@@ -38,11 +38,8 @@ const options: CreateSliceOptions = {
                 state.quote = action.payload;
                 state.loading = 'idle';
             });
-
     }
-}
-
-export const quoteSlice = createSlice(options);
+});
 
 export const selectQuote = (state: { quote: QuoteState }) => state.quote.quote;
 export const selectLoading = (state: { quote: QuoteState }) => state.quote.loading;
